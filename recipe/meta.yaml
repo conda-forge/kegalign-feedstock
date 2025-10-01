@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/galaxyproject/KegAlign/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: b6e055e9a81b610607046d03c2b33cb650f98bcddf1edbe548dabd4baeedc19c
+  sha256: bcffd6f60edf3faf7baf0047830971a326d63ccdc600e781d8dbe40da1d79fdc
 
 build:
   number: 0
