@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://github.com/galaxyproject/KegAlign/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: bcffd6f60edf3faf7baf0047830971a326d63ccdc600e781d8dbe40da1d79fdc
+  sha256: 818e92e930967336256413f42eb87be0a804911b8cbf1eaa05c52aa82546a29c
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win or osx or cuda_compiler_version is undefined or cuda_compiler_version == "None"]
 
 requirements:
