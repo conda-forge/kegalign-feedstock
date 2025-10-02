@@ -34,7 +34,8 @@ Current build status
         </summary>
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
-          <tbody><tr>
+          <tbody>
+            <tr>
               <td>linux_64_cuda_compiler_version12.9</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=23230&branchName=main">
