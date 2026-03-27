@@ -1,5 +1,5 @@
 {% set name = "KegAlign" %}
-{% set version = "0.1.2.8" %}
+{% set version = "0.1.2.9" %}
 {% set kegalign_python_version = "3.12.*" %}
 {% set kegalign_tbb_version = "2020.2.*" %}
 
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://github.com/galaxyproject/KegAlign/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 818e92e930967336256413f42eb87be0a804911b8cbf1eaa05c52aa82546a29c
+  sha256: f3a2183a9ca2c6efe1339ab55f9d870812a0dcfa84c55159bd73357d44f68c04
 
 build:
-  number: 3
+  number: 0
   skip: true  # [win or osx or cuda_compiler_version is undefined or cuda_compiler_version == "None"]
 
 requirements:
