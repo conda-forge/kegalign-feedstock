@@ -8,8 +8,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/galaxyproject/KegAlign/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: d433c88ed6ddec7a29fdc8c00ec24d1e0e768509849710afc2064bf4bdcb93a6
+  # EXPERIMENT, NOT FOR MERGE. Second isolation cycle for the CUDA 12.9 regression introduced by
+  # galaxyproject/KegAlign#39. The first cycle exonerated the C++17 dialect. This branch reverts
+  # only cmake_minimum_required 3.30 -> 3.10. A green 12.9 job means the CMake floor was the cause;
+  # a failure leaves CUDA_STANDARD_REQUIRED as the last suspect.
+  git_url: https://github.com/richard-burhans/KegAlign.git
+  git_rev: exp-floor310-keep-rest
 
 build:
   number: 0
