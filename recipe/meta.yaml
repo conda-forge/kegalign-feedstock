@@ -8,9 +8,10 @@ package:
   version: {{ version }}
 
 source:
-  # VERIFICATION, NOT FOR MERGE: proves the CUDA 12.9 fix before it is released.
-  git_url: https://github.com/richard-burhans/KegAlign.git
-  git_rev: fix/cuda-architectures-respect-environment
+  # VERIFICATION, NOT FOR MERGE: proves the CUDA 12.9 fix on merged main,
+  # before cutting a release.
+  git_url: https://github.com/galaxyproject/KegAlign.git
+  git_rev: main
 
 build:
   number: 0
