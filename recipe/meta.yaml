@@ -8,8 +8,9 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/galaxyproject/KegAlign/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: d433c88ed6ddec7a29fdc8c00ec24d1e0e768509849710afc2064bf4bdcb93a6
+  # VERIFICATION, NOT FOR MERGE: proves the CUDA 12.9 fix before it is released.
+  git_url: https://github.com/richard-burhans/KegAlign.git
+  git_rev: fix/cuda-architectures-respect-environment
 
 build:
   number: 0
