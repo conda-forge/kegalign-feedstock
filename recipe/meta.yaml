@@ -8,8 +8,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/galaxyproject/KegAlign/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 6627772635260b80ab07b0335f6ed4a0d211e052b2d2c7b234f760585ceac74c
+  # EXPERIMENT, NOT FOR MERGE. Building from a branch to isolate which part of
+  # galaxyproject/KegAlign#39 broke the CUDA 12.9 build. That PR changed three things at once:
+  # cmake_minimum_required 3.10 -> 3.30, the dialect 14 -> 17, and CUDA_STANDARD_REQUIRED ON.
+  # This branch reverts ONLY the dialect. A green 12.9 job means the dialect was the cause.
+  git_url: https://github.com/richard-burhans/KegAlign.git
+  git_rev: exp-std14-keep-rest
 
 build:
   number: 0
