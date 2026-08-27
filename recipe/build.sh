@@ -10,7 +10,9 @@ mkdir -p "$BUILD_DIR"
 cd "$BUILD_DIR"
 
 cmake "${CMAKE_ARGS}" -DCMAKE_BUILD_TYPE=Release "$SRC_DIR"
-make
+# EXPERIMENT, NOT FOR MERGE: show the real nvcc command line, so we can count
+# the -gencode flags that actually get emitted.
+make VERBOSE=1
 
 install --mode 0755 --directory "$BIN_DIR"
 install --mode 0755 "$SRC_DIR/build/kegalign" "$BIN_DIR"
