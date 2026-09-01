@@ -24,9 +24,7 @@ requirements:
     - cmake
     - make
   host:
-    {% if cuda_compiler_version is not undefined %}
-    - cuda-version {{ cuda_compiler_version }}
-    {% endif %}
+    - cuda-version {{ cuda_compiler_version }}  # [cuda_compiler_version is not undefined]
     - libboost-devel
     - tbb-devel {{ kegalign_tbb_version }}
     - zlib
