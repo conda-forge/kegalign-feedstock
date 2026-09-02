@@ -1,5 +1,5 @@
 {% set name = "KegAlign" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.1" %}
 {% set kegalign_python_version = "3.12.*" %}
 {% set kegalign_tbb_version = "2020.2.*" %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/galaxyproject/KegAlign/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 312f6edd3a299e414ce4958d6e6bb1d6cba25c865350a613b13ed6f7a732aa99
+  sha256: 91c24669c7afbc3625c048db0a156b6a3227317870258bab3fc48ac75990800e
 
 build:
   number: 0
