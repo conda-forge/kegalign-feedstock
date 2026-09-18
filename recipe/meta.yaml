@@ -1,5 +1,5 @@
 {% set name = "KegAlign" %}
-{% set version = "0.3.1" %}
+{% set version = "0.3.2" %}
 {% set kegalign_python_version = "3.12.*" %}
 {% set kegalign_tbb_version = "2020.2.*" %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/galaxyproject/KegAlign/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 91c24669c7afbc3625c048db0a156b6a3227317870258bab3fc48ac75990800e
+  sha256: bdec97b68446164358aae2a29c53bb3847a8e5fbf4c55641532078bd3c932df0
 
 build:
   number: 0
@@ -45,6 +45,17 @@ requirements:
 test:
   commands:
     - kegalign --help
+    # The scripts are installed by an explicit list in build.sh, not a glob, so a script added
+    # upstream ships only if someone remembers to add a line here too. Nothing else would notice:
+    # the package builds, `kegalign --help` passes, and the omission surfaces only when a Galaxy
+    # tool calls the missing file at run time. Assert each one is actually in the package.
+    - test -x "$PREFIX/bin/build_pairs.py"
+    - test -x "$PREFIX/bin/diagonal_partition.py"
+    - test -f "$PREFIX/bin/lastz-cmd.ini"
+    - test -x "$PREFIX/bin/package_output.py"
+    - test -x "$PREFIX/bin/runner.py"
+    - test -x "$PREFIX/bin/run_kegalign"
+    - test -x "$PREFIX/bin/run_lastz_tarball.py"
 
 about:
   home: https://github.com/galaxyproject/KegAlign
